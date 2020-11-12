@@ -36,6 +36,6 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
-        theRB.AddForce(new Vector3(0f, 0f, speedInput));
+        theRB.AddForce(new Vector3(0f, 0f, speedInput * 1000f));
     }
 }

@@ -77,3 +77,4 @@ Assets/Zombies/**/*.fbx
 Assets/Terrain/**/*.tif
 Assets/GameLevel/NavMesh.asset
 Racing_game/Library/PackageCache/
+Racing_game/Temp/
