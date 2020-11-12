@@ -12,6 +12,9 @@ public class CarController : MonoBehaviour
 
     private float speedInput;
 
+    public float turnStrength = 180f;
+    private float turnInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +34,26 @@ public class CarController : MonoBehaviour
             speedInput = Input.GetAxis("Vertical") * reverseAccel;
         }
 
+        turnInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
+        }
+
+
+
+
+
+
+
+
+
         transform.position = theRB.position;
     }
 
     void FixedUpdate()
     {
-        theRB.AddForce(new Vector3(0f, 0f, speedInput * 1000f));
+        theRB.AddForce(transform.forward * speedInput * 1000f);
     }
 }
