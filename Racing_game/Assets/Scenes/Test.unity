@@ -761,8 +761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 858949527}
   maxSpeed: 30
-  forwardAccel: 8
-  reverseAccel: 4
+  forwardAccel: 10
+  reverseAccel: 5
   turnStrength: 180
 --- !u!1001 &1955628993
 PrefabInstance:
