@@ -21,10 +21,15 @@ public class CarController : MonoBehaviour
     public LayerMask whatIsGround;
     public float groundRayLength = .75f;
 
+    private float dragOnGround;
+    public float gravityMod = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
         theRB.transform.parent = null;
+
+        dragOnGround = theRB.drag;
     }
 
     // Update is called once per frame
@@ -69,11 +74,20 @@ public class CarController : MonoBehaviour
             grounded = true;
         }
 
-        //accelerate the car
+        //accelerates the car
         if (grounded)
-        { 
-        theRB.AddForce(transform.forward * speedInput * 1000f);
+        {
+            theRB.drag = dragOnGround;
+
+            theRB.AddForce(transform.forward * speedInput * 1000f);
         }
+        else
+        {
+            theRB.drag = 0.1f;
+
+            theRB.AddForce(-Vector3.up * gravityMod * 100f);
+        }
+
         if (theRB.velocity.magnitude > maxSpeed)
         {
             theRB.velocity = theRB.velocity.normalized * maxSpeed;
