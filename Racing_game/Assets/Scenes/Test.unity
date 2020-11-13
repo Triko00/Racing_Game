@@ -756,6 +756,11 @@ MonoBehaviour:
   forwardAccel: 10
   reverseAccel: 5
   turnStrength: 180
+  groundRayPoint: {fileID: 1867448919}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  groundRayLength: 0.75
 --- !u!4 &1760950823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 19c6bcf1bfb17e146847b0c124c89067,
