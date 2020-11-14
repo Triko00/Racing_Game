@@ -24,6 +24,9 @@ public class CarController : MonoBehaviour
     private float dragOnGround;
     public float gravityMod = 10f;
 
+    public Transform leftFrontWheel, rightFrontWheel;
+    public float maxWheelTurn = 25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,10 +58,9 @@ public class CarController : MonoBehaviour
 
 
 
-
-
-
-
+        //turning the wheels
+        leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
+        rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, rightFrontWheel.localRotation.eulerAngles.z);
 
         transform.position = theRB.position;
     }
