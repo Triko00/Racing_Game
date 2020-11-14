@@ -78,3 +78,4 @@ Assets/Terrain/**/*.tif
 Assets/GameLevel/NavMesh.asset
 Racing_game/Library/PackageCache/
 Racing_game/Temp/
+Racing_game/Library/Artifacts/
