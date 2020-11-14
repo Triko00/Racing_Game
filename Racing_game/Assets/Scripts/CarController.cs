@@ -17,7 +17,7 @@ public class CarController : MonoBehaviour
 
     private bool grounded;
 
-    public Transform groundRayPoint;
+    public Transform groundRayPoint, groundRayPoint2;
     public LayerMask whatIsGround;
     public float groundRayLength = .75f;
 
@@ -63,15 +63,30 @@ public class CarController : MonoBehaviour
         transform.position = theRB.position;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         grounded = false;
 
         RaycastHit hit;
+        Vector3 normalTarget = Vector3.zero;
 
         if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLength, whatIsGround))
         {
             grounded = true;
+
+            normalTarget = hit.normal;
+        }
+
+        if (Physics.Raycast(groundRayPoint2.position, -transform.up, out hit, groundRayLength, whatIsGround))
+        {
+            grounded = true;
+
+            normalTarget = (normalTarget + hit.normal) / 2f;
+        }
+        //when on ground rotate to match the normal
+        if (grounded)
+        {
+            transform.rotation = Quaternion.FromToRotation(transform.up, normalTarget) * transform.rotation;
         }
 
         //accelerates the car
