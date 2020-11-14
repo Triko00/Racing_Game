@@ -65,7 +65,6 @@ public class CarController : MonoBehaviour
         transform.position = theRB.position;
     }
 
-    // Comment
     private void FixedUpdate()
     {
         grounded = false;
