@@ -76,6 +76,9 @@ Assets/GleyPlugins/DeliveryVehiclesPack/Textures/Vehicle01_Vespa.psd
 Assets/Zombies/**/*.fbx
 Assets/Terrain/**/*.tif
 Assets/GameLevel/NavMesh.asset
-Racing_game/Library/PackageCache/
-Racing_game/Temp/
-Racing_game/Library/Artifacts/
+Racing_game/Temp/*
+Racing_game/Library/Artifacts/*
+Racing_game/Library/PackageCache/*
+Racing_game/Library/StateCache/*
+Racing_game/Library/ShaderCache/*
+Racing_game/Library/shadercompiler-UnityShaderCompiler*
