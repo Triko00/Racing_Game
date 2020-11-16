@@ -76,6 +76,11 @@ public class CarController : MonoBehaviour
             emissionRate = maxEmission;
         }
 
+        if (theRB.velocity.magnitude <= 1f)
+        {
+            emissionRate = 0;
+        }
+
         for (int i = 0; i < dustTrail.Length; i++)
         {
             var emissionModule = dustTrail[i].emission;
