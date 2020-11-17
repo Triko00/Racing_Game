@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CameraSwitcher.cs" />
      <Compile Include="Assets\Scripts\CarController.cs" />
      <None Include="Assets\_Udemy Racer Assets\Models\Kenney\License - Nature Kit.txt" />
      <None Include="Assets\_Udemy Racer Assets\Models\Kenney\License - Racing Kit.txt" />

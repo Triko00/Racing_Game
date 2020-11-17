@@ -14742,7 +14742,7 @@ GameObject:
   - component: {fileID: 825620320}
   - component: {fileID: 825620319}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Top Down Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14822,11 +14822,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825620318}
   m_LocalRotation: {x: 0.22675803, y: -0.46782142, z: 0.11784786, w: 0.8460708}
-  m_LocalPosition: {x: 9.88, y: 9.4, z: -5.21}
+  m_LocalPosition: {x: -3.3240957, y: -6.169115, z: -12.871992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 2099264400}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 29.602001, y: -58.101, z: -0.84000003}
 --- !u!1 &858949525
 GameObject:
@@ -14951,7 +14951,7 @@ GameObject:
   - component: {fileID: 895520392}
   - component: {fileID: 895520395}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Follow Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15016,12 +15016,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895520391}
   m_LocalRotation: {x: 0.2669336, y: 0.000000008301321, z: -0.0000000022993325, w: 0.96371496}
-  m_LocalPosition: {x: 0, y: 3.8, z: -5.5}
+  m_LocalPosition: {x: -13.204096, y: -11.7691145, z: -13.161993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1975510939}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 2099264400}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.1000004, y: 0, z: 0}
 --- !u!114 &895520395
 MonoBehaviour:
@@ -20397,6 +20397,54 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1715008691}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2099264398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099264400}
+  - component: {fileID: 2099264399}
+  m_Layer: 0
+  m_Name: Camera Switcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2099264399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099264398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e4d1cfec3219a48847a26bf9ca2d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameras:
+  - {fileID: 825620318}
+  - {fileID: 895520391}
+--- !u!4 &2099264400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099264398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.204096, y: 15.569115, z: 7.6619925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 895520394}
+  - {fileID: 825620322}
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2129132437 stripped
