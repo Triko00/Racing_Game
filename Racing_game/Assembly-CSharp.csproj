@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraSwitcher.cs" />
      <Compile Include="Assets\Scripts\CarController.cs" />
+     <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
      <None Include="Assets\_Udemy Racer Assets\Models\Kenney\License - Nature Kit.txt" />
      <None Include="Assets\_Udemy Racer Assets\Models\Kenney\License - Racing Kit.txt" />
      <None Include="Assets\_Udemy Racer Assets\Models\Kenney\License - Car Kit.txt" />
