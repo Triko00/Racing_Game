@@ -1236,7 +1236,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.70399463
+          value: 0.23200035
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6153,7 +6153,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.70399463
+          value: 0.23200035
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -10975,7 +10975,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.70399463
+          value: 0.23200035
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -14770,7 +14770,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825620318}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &825620321
 Camera:
   m_ObjectHideFlags: 0
@@ -14964,7 +14964,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895520391}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &895520393
 Camera:
   m_ObjectHideFlags: 0
@@ -15131,7 +15131,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16231,7 +16231,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.70399463
+          value: 0.23200035
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -20047,6 +20047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715008691}
   - component: {fileID: 1715008692}
+  - component: {fileID: 1715008693}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Untagged
@@ -20109,6 +20110,14 @@ MonoBehaviour:
   maxEmission: 25
   emissionFadeSpeed: 100
   engineSound: {fileID: 988242509}
+--- !u!81 &1715008693
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715008690}
+  m_Enabled: 1
 --- !u!4 &1760950823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 19c6bcf1bfb17e146847b0c124c89067,
