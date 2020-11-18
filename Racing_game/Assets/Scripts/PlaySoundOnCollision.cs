@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaySoundOnCollision : MonoBehaviour
 {
     public AudioSource soundToPlay;
+    public int groundLayerNo = 8;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,13 @@ public class PlaySoundOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        soundToPlay.Stop();
+        if(other.gameObject.layer != 8)
+        {
 
-        soundToPlay.Play();
+
+            soundToPlay.Stop();
+            soundToPlay.pitch = Random.Range(0.8f, 1.2f);
+            soundToPlay.Play();
+        }   
     }
 }
