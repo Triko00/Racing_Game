@@ -31,7 +31,8 @@ public class CarController : MonoBehaviour
     public float maxEmission = 25f, emissionFadeSpeed = 20f;
     private float emissionRate;
 
-    public AudioSource engineSound;
+    public AudioSource engineSound, skidSound;
+    public float skidFadeSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -93,6 +94,17 @@ public class CarController : MonoBehaviour
         if(engineSound != null)
         {
             engineSound.pitch = 1f + ((theRB.velocity.magnitude / maxSpeed) * 2f);
+        }
+
+        if (skidSound != null)
+        {
+            if(Mathf.Abs(turnInput) > 0.5f)
+            {
+                skidSound.volume = 1.0f;
+            }else
+            {
+                skidSound.volume = Mathf.MoveTowards(skidSound.volume, 0.0f, skidFadeSpeed * Time.deltaTime);
+            }
         }
     }
 
