@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class RaceManager : MonoBehaviour
 {
+    public static RaceManager instance;
+
     public Checkpoint[] allCheckpoints;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()

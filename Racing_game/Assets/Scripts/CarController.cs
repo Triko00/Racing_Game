@@ -34,6 +34,9 @@ public class CarController : MonoBehaviour
     public AudioSource engineSound, skidSound;
     public float skidFadeSpeed;
 
+    private int nextCheckpoint;
+    public int currentLap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -154,13 +157,27 @@ public class CarController : MonoBehaviour
             theRB.velocity = theRB.velocity.normalized * maxSpeed;
         }
 
-        Debug.Log(theRB.velocity.magnitude);
+        //Debug.Log(theRB.velocity.magnitude);
 
         transform.position = theRB.position;
 
         if (grounded && Input.GetAxis("Vertical") != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
+        }
+    }
+
+    public void CheckpointHit(int cpNumber)
+    {
+        if(cpNumber == nextCheckpoint)
+        {
+            nextCheckpoint++;
+
+            if (nextCheckpoint == RaceManager.instance.allCheckpoints.Length)
+            {
+                nextCheckpoint = 0;
+                currentLap++;
+            }
         }
     }
 }
