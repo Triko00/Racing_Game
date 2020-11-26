@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CheckpointChecker.cs" />
      <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
      <Compile Include="Assets\Scripts\RaceManager.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
