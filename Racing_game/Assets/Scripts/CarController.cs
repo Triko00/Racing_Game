@@ -41,12 +41,23 @@ public class CarController : MonoBehaviour
 
     public bool isAI;
 
+    public int currentTarget;
+    private Vector3 targetPoint;
+    public float aiAccelerateSpeed = 1f, aiTurnSpeed = 0.8f, aiReachPointRange = 5f, aiPointVatriance = 3f;
+    private float aiSpeedInput;
+
     // Start is called before the first frame update
     void Start()
     {
         theRB.transform.parent = null;
 
         dragOnGround = theRB.drag;
+
+        if(isAI)
+        {
+            targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+            RandomiseAITarget();
+        }
 
         UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
@@ -77,6 +88,22 @@ public class CarController : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
             }*/
+        } else
+        {
+            targetPoint.y = transform.position.y;
+
+            if(Vector3.Distance(transform.position, targetPoint) < aiReachPointRange)
+            {
+                currentTarget++;
+                if(currentTarget >= RaceManager.instance.allCheckpoints.Length)
+                {
+                    currentTarget = 0;
+                }
+
+                targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+                RandomiseAITarget();
+
+            }
         }
 
         //turning the wheels
@@ -208,5 +235,10 @@ public class CarController : MonoBehaviour
             UIManager.instance.bestLapTimeText.text = string.Format("{0:00}min {1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
             UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
         }
+    }
+
+    public void RandomiseAITarget()
+    {
+        targetPoint += new Vector3(Random.Range(-aiPointVatriance, aiPointVatriance), 0f, Random.Range(-aiPointVatriance, aiPointVatriance));
     }
 }
