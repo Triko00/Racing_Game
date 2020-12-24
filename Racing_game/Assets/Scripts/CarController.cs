@@ -43,7 +43,7 @@ public class CarController : MonoBehaviour
 
     public int currentTarget;
     private Vector3 targetPoint;
-    public float aiAccelerateSpeed = 1f, aiTurnSpeed = 0.8f, aiReachPointRange = 5f, aiPointVatriance = 3f;
+    public float aiAccelerateSpeed = 1f, aiTurnSpeed = 0.8f, aiReachPointRange = 5f, aiPointVatriance = 3f, aiMaxTurn = 15f;
     private float aiSpeedInput;
 
     // Start is called before the first frame update
@@ -102,8 +102,29 @@ public class CarController : MonoBehaviour
 
                 targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
                 RandomiseAITarget();
-
             }
+
+            Vector3 targetDir = targetPoint - transform.position;
+            float angle = Vector3.Angle(targetDir, transform.forward);
+
+            Vector3 localPos = transform.InverseTransformPoint(targetPoint);
+            if(localPos.x < 0)
+            {
+                angle = -angle;
+            }
+
+            turnInput = Mathf.Clamp(angle / aiMaxTurn, -1f, 1f);
+
+            if(Mathf.Abs(angle) < aiMaxTurn)
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, 1f, aiAccelerateSpeed);
+            } else
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, aiTurnSpeed, aiAccelerateSpeed);
+            }
+
+            aiSpeedInput = 1f;
+            speedInput = aiSpeedInput * forwardAccel;
         }
 
         //turning the wheels
