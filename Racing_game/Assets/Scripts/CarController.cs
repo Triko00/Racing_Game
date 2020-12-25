@@ -34,7 +34,7 @@ public class CarController : MonoBehaviour
     public AudioSource engineSound, skidSound;
     public float skidFadeSpeed;
 
-    private int nextCheckpoint;
+    public int nextCheckpoint;
     public int currentLap;
 
     public float lapTime, bestLapTime;
