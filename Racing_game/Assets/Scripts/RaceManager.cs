@@ -11,7 +11,6 @@ public class RaceManager : MonoBehaviour
     public int totalLaps;
 
 
-
     public CarController playerCar;
     public List<CarController> allAICars = new List<CarController>();
     public int playerPosition;
@@ -64,6 +63,8 @@ public class RaceManager : MonoBehaviour
             }
 
             posCheckCounter = timeBetweenPosCheck;
+
+            UIManager.instance.positionText.text = playerPosition + "/" + (allAICars.Count + 1);
         }
 
        
