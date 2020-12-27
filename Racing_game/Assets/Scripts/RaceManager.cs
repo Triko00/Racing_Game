@@ -17,6 +17,8 @@ public class RaceManager : MonoBehaviour
     public float timeBetweenPosCheck = 0.2f;
     private float posCheckCounter;
 
+    public float aiDefaultSpeed = 30f, playerDefaultSpeed = 30f, rubberBandSpeedMod = 3.5f, rubBandAccel = 0.5f;
+
     private void Awake()
     {
         instance = this;
@@ -67,6 +69,24 @@ public class RaceManager : MonoBehaviour
             UIManager.instance.positionText.text = playerPosition + "/" + (allAICars.Count + 1);
         }
 
-       
+        //manage rubber banding
+        if (playerPosition == 1)
+        {
+            foreach (CarController aiCar in allAICars)
+            {
+                aiCar.maxSpeed = Mathf.MoveTowards(aiCar.maxSpeed, aiDefaultSpeed + rubberBandSpeedMod, rubBandAccel * Time.deltaTime);
+            }
+
+            playerCar.maxSpeed = Mathf.MoveTowards(playerCar.maxSpeed, playerDefaultSpeed - rubberBandSpeedMod, rubBandAccel * Time.deltaTime);
+        }
+        else
+        {
+            foreach (CarController aiCar in allAICars)
+            {
+                aiCar.maxSpeed = Mathf.MoveTowards(aiCar.maxSpeed, aiDefaultSpeed - (rubberBandSpeedMod * ((float)playerPosition / ((float)allAICars.Count + 1))), rubBandAccel * Time.deltaTime);
+            }
+
+            playerCar.maxSpeed = Mathf.MoveTowards(playerCar.maxSpeed, playerDefaultSpeed + (rubberBandSpeedMod * ((float) playerPosition / ((float) allAICars.Count + 1))), rubBandAccel * Time.deltaTime);
+        }
     }
 }
