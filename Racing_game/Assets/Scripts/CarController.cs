@@ -92,6 +92,12 @@ public class CarController : MonoBehaviour
                 {
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
                 }*/
+
+                if(Input.GetKeyDown(KeyCode.R))
+                {
+                    ResetToTrack();
+                }
+
             }
             else
             {
@@ -283,5 +289,21 @@ public class CarController : MonoBehaviour
     public void RandomiseAITarget()
     {
         targetPoint += new Vector3(Random.Range(-aiPointVatriance, aiPointVatriance), 0f, Random.Range(-aiPointVatriance, aiPointVatriance));
+    }
+
+    void ResetToTrack()
+    {
+        int pointToGoTo = nextCheckpoint - 1;
+        if(pointToGoTo < 0)
+        {
+            pointToGoTo = RaceManager.instance.allCheckpoints.Length - 1;
+        }
+
+        transform.position = RaceManager.instance.allCheckpoints[pointToGoTo].transform.position;
+        theRB.transform.position = transform.position;
+        theRB.velocity = Vector3.zero;
+
+        speedInput = 0f;
+        turnInput = 0f;
     }
 }
