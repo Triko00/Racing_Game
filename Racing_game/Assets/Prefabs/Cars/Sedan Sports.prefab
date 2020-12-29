@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3869916056054645432, guid: c16a378440e7794479c8ed95eeaa3dbf,
         type: 3}
       propertyPath: m_Name
-      value: Player Car
+      value: Sedan Sports
       objectReference: {fileID: 0}
     - target: {fileID: 3869916056054645433, guid: c16a378440e7794479c8ed95eeaa3dbf,
         type: 3}
@@ -65,6 +65,16 @@ PrefabInstance:
     - target: {fileID: 3869916056054645433, guid: c16a378440e7794479c8ed95eeaa3dbf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869916056054645438, guid: c16a378440e7794479c8ed95eeaa3dbf,
+        type: 3}
+      propertyPath: isAI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869916056054645439, guid: c16a378440e7794479c8ed95eeaa3dbf,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
