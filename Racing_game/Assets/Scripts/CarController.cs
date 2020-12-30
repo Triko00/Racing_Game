@@ -286,13 +286,32 @@ public class CarController : MonoBehaviour
             bestLapTime = lapTime;
         }
 
-        lapTime = 0f;
-
-        if (!isAI)
+        if (currentLap <= RaceManager.instance.totalLaps)
         {
-            var ts = System.TimeSpan.FromSeconds(bestLapTime);
-            UIManager.instance.bestLapTimeText.text = string.Format("{0:00}min {1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
-            UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+
+            lapTime = 0f;
+
+            if (!isAI)
+            {
+                var ts = System.TimeSpan.FromSeconds(bestLapTime);
+                UIManager.instance.bestLapTimeText.text = string.Format("{0:00}min {1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+                UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+            }
+        } else
+        {
+            if(!isAI)
+            {
+                isAI = true;
+                aiSpeedMod = 1f;
+
+                targetPoint = RaceManager.instance.allCheckpoints[currentTarget].transform.position;
+                RandomiseAITarget();
+
+                var ts = System.TimeSpan.FromSeconds(bestLapTime);
+                UIManager.instance.bestLapTimeText.text = string.Format("{0:00}min {1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+
+                RaceManager.instance.FinishRace();
+            }
         }
     }
 

@@ -5441,12 +5441,12 @@ PrefabInstance:
     - target: {fileID: 3999220841500076319, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000018360417
+      value: -0.000000008377407
       objectReference: {fileID: 0}
     - target: {fileID: 3999220841500076319, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000050855404
+      value: 0.0000000023204068
       objectReference: {fileID: 0}
     - target: {fileID: 3999220841500076319, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
@@ -5461,7 +5461,7 @@ PrefabInstance:
     - target: {fileID: 3999220841500076319, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26693356
+      value: 0.2669336
       objectReference: {fileID: 0}
     - target: {fileID: 3999220841500076319, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
@@ -5486,17 +5486,17 @@ PrefabInstance:
     - target: {fileID: 3999220842560749582, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000029802322
+      value: 0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 3999220842560749582, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000023272317
+      value: -0.00000001993435
       objectReference: {fileID: 0}
     - target: {fileID: 3999220842560749582, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000013963388
+      value: 0.000000011960606
       objectReference: {fileID: 0}
     - target: {fileID: 3999220842560749582, guid: d842520f471bbee46a02f50606e9b58d,
         type: 3}
@@ -13551,7 +13551,7 @@ MonoBehaviour:
   - {fileID: 2007260695}
   - {fileID: 637756883}
   - {fileID: 216056411}
-  totalLaps: 5
+  totalLaps: 1
   playerCar: {fileID: 1014283611}
   allAICars: []
   playerPosition: 0
@@ -13582,6 +13582,7 @@ MonoBehaviour:
   - {fileID: 6362206617997689424, guid: 275b4f66b310e7b499561130e50c23e5, type: 3}
   - {fileID: 2574416610324041008, guid: 05711813163a2314aacbd029db8ff8de, type: 3}
   - {fileID: 7921072511427070, guid: b24a25542fc288442b511a404b259a56, type: 3}
+  raceCompleted: 0
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0
