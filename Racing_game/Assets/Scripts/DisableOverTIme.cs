@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisableOverTIme : MonoBehaviour
+public class DisableOverTime : MonoBehaviour
 {
     public float timeToDisable;
 
