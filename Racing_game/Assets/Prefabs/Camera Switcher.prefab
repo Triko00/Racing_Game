@@ -463,3 +463,5 @@ MonoBehaviour:
   cameras:
   - {fileID: 3999220841562116299}
   - {fileID: 3999220841500076306}
+  topDownCam: {fileID: 3999220841562116298}
+  cineCam: {fileID: 3999220842560749583}
