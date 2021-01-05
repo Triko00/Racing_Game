@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
      <Compile Include="Assets\Scripts\RaceInfoManager.cs" />
      <Compile Include="Assets\Scripts\RaceManager.cs" />
+     <Compile Include="Assets\Scripts\RacerSelectButton.cs" />
      <Compile Include="Assets\Scripts\TrackSelectButton.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
