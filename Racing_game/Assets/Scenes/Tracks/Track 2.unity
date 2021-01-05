@@ -3294,7 +3294,7 @@ PrefabInstance:
     - target: {fileID: 657911034233111811, guid: bac662eb01b45554aa7c84905074bbfd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 657911034233111814, guid: bac662eb01b45554aa7c84905074bbfd,
         type: 3}
@@ -25656,7 +25656,7 @@ MonoBehaviour:
   - {fileID: 7921072511427070, guid: b24a25542fc288442b511a404b259a56, type: 3}
   - {fileID: 2725641169193007380, guid: 850a86b4fb3cfcf41afd5d57f3b7a8dc, type: 3}
   raceCompleted: 0
-  raceCompleteScene: 
+  raceCompleteScene: MainMenu
 --- !u!4 &1931094262
 Transform:
   m_ObjectHideFlags: 0

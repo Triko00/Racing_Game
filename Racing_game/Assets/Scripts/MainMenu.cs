@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public static MainMenu instance;
+
     public GameObject raceSetupPanel, trackSelectPanel, racerSelectPanel;
+
+    public Image trackSelectImage, racerSelectImage;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
