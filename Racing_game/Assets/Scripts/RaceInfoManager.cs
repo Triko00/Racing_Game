@@ -11,6 +11,9 @@ public class RaceInfoManager : MonoBehaviour
     public int noOfAI;
     public int noOfLaps;
 
+    public bool enteredRace;
+    public Sprite trackSprite, racerSprite;
+
     private void Awake()
     {
         if (instance == null)

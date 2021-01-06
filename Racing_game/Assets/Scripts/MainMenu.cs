@@ -20,7 +20,13 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(RaceInfoManager.instance.enteredRace)
+        {
+            trackSelectImage.sprite = RaceInfoManager.instance.trackSprite;
+            racerSelectImage.sprite = RaceInfoManager.instance.racerSprite;
+
+            OpenRaceSetup();
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        RaceInfoManager.instance.enteredRace = true;
         SceneManager.LoadScene(RaceInfoManager.instance.trackToLoad);
     }
 

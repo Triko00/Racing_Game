@@ -12,6 +12,7 @@ public class RacerSelectButton : MonoBehaviour
     public void SelectRacer()
     {
         RaceInfoManager.instance.racerToUse = racerToSet;
+        RaceInfoManager.instance.racerSprite = racerImage.sprite;
 
         MainMenu.instance.racerSelectImage.sprite = racerImage.sprite;
 
