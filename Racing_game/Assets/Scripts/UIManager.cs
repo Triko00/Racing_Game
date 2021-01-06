@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
 
     public TMP_Text lapCounterText, bestLapTimeText, currentLapTimeText, positionText, countdownText, goText, raceResultText;
 
-    public GameObject resultsScreen, pauseScreen;
+    public GameObject resultsScreen, pauseScreen, trackUnlockedMessage;
 
     public bool isPaused;
 

@@ -14,6 +14,8 @@ public class RaceInfoManager : MonoBehaviour
     public bool enteredRace;
     public Sprite trackSprite, racerSprite;
 
+    public string trackToUnlock;
+
     private void Awake()
     {
         if (instance == null)

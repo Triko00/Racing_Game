@@ -46,6 +46,8 @@ public class TrackSelectButton : MonoBehaviour
             MainMenu.instance.trackSelectImage.sprite = trackImage.sprite;
 
             MainMenu.instance.CloseTrackSelect();
+
+            RaceInfoManager.instance.trackToUnlock = trackToUnlockOnWin;
         }
     }
 }
