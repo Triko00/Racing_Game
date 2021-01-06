@@ -27,6 +27,8 @@ public class MainMenu : MonoBehaviour
 
             OpenRaceSetup();
         }
+
+        PlayerPrefs.SetInt(RaceInfoManager.instance.trackToLoad + "_unlocked", 1);
     }
 
     // Update is called once per frame
