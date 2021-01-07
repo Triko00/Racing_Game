@@ -66,6 +66,6 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("*Gunclick* quit game *gunshot*");
+        //Debug.Log("*Gunclick* quit game *gunshot*");
     }
 }

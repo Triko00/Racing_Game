@@ -34,13 +34,11 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.P))
         {
             PlayerPrefs.DeleteAll();
-            Debug.Log("Keys Deleted");
+            //Debug.Log("Keys Deleted");
         }
-#endif
     }
 
     public void StartGame()
@@ -52,7 +50,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("OH COME OOON... game quit i guess");
+        //Debug.Log("OH COME OOON... game quit i guess");
     }
 
     public void OpenRaceSetup()
