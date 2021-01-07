@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CheckpointChecker.cs" />
      <Compile Include="Assets\Scripts\DisableOverTime.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
      <Compile Include="Assets\Scripts\RaceInfoManager.cs" />
      <Compile Include="Assets\Scripts\RaceManager.cs" />
